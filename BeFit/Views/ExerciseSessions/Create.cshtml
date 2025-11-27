@@ -1,0 +1,66 @@
+@model BeFit.Models.ExerciseSession
+
+@{
+    ViewData["Title"] = "Create Exercise Session";
+}
+
+<div class="container mt-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="fw-bold text-primary">Create Exercise Session</h1>
+        <a asp-action="Index" class="btn btn-secondary btn-lg">
+            &larr; Back to List
+        </a>
+    </div>
+
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-4">
+
+            <h4 class="mb-4">Exercise Session</h4>
+
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="ExerciseTypeId" class="form-label"></label>
+                    <select asp-for="ExerciseTypeId" class="form-select" asp-items="ViewBag.ExerciseTypeId"></select>
+                    <span asp-validation-for="ExerciseTypeId" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ExerciseId" class="form-label"></label>
+                    <select asp-for="ExerciseId" class="form-select" asp-items="ViewBag.ExerciseId"></select>
+                    <span asp-validation-for="ExerciseId" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Weight" class="form-label"></label>
+                    <input asp-for="Weight" class="form-control" />
+                    <span asp-validation-for="Weight" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Series" class="form-label"></label>
+                    <input asp-for="Series" class="form-control" />
+                    <span asp-validation-for="Series" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Repetitions" class="form-label"></label>
+                    <input asp-for="Repetitions" class="form-control" />
+                    <span asp-validation-for="Repetitions" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg">Create</button>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

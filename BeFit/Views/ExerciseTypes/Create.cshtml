@@ -1,0 +1,42 @@
+@model BeFit.Models.ExerciseType
+
+@{
+    ViewData["Title"] = "Create Exercise Type";
+}
+
+<div class="container mt-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="fw-bold text-primary">Create Exercise Type</h1>
+        <a asp-action="Index" class="btn btn-secondary btn-lg">
+            &larr; Back to List
+        </a>
+    </div>
+
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-4">
+
+            <h4 class="mb-4">Exercise Type</h4>
+
+            <form asp-action="Create">
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg">Create</button>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

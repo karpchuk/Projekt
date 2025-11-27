@@ -1,0 +1,40 @@
+@model BeFit.Models.ExerciseType
+
+@{
+    ViewData["Title"] = "Delete Exercise Type";
+}
+
+<div class="container mt-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="fw-bold text-danger">Delete Exercise Type</h1>
+        <a asp-action="Index" class="btn btn-secondary btn-lg">
+            &larr; Back to List
+        </a>
+    </div>
+
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-4">
+
+            <h3 class="mb-4 text-danger">Are you sure you want to delete this?</h3>
+
+            <h4 class="mb-3">Exercise Type</h4>
+            <dl class="row">
+                <dt class="col-sm-3 fw-semibold">
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd class="col-sm-9 fs-5">
+                    @Model.Name
+                </dd>
+            </dl>
+
+            <form asp-action="Delete" class="mt-4">
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn btn-danger btn-lg me-3">Delete</button>
+                <a asp-action="Index" class="btn btn-outline-secondary btn-lg">Back to List</a>
+            </form>
+
+        </div>
+    </div>
+
+</div>

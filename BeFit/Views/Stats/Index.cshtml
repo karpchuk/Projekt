@@ -1,0 +1,72 @@
+@model IEnumerable<dynamic>
+
+@{
+    ViewData["Title"] = "Stats";
+}
+
+<div class="container mt-5">
+
+    <!-- Nag?ówek -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="fw-bold text-gradient">Statistics Overview</h1>
+        <a asp-action="Index" asp-controller="Home" class="btn btn-outline-dark btn-lg rounded-pill shadow-sm">
+            &larr; Back to Home
+        </a>
+    </div>
+
+    <!-- Karta -->
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-4">
+
+            <!-- Tabela -->
+            <table class="table table-hover align-middle text-center">
+                <thead class="table-dark text-uppercase">
+                    <tr>
+                        <th scope="col" class="fs-6">Name</th>
+                        <th scope="col" class="fs-6">Count</th>
+                        <th scope="col" class="fs-6">Total Repetitions</th>
+                        <th scope="col" class="fs-6">Average Weight (kg)</th>
+                        <th scope="col" class="fs-6">Max Weight (kg)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var stat in Model)
+                    {
+                        <tr class="table-row-hover">
+                            <td class="fw-semibold">@stat.Name</td>
+                            <td>@stat.Count</td>
+                            <td>@stat.TotalRepetitions</td>
+                            <td>@String.Format("{0:0.##}", stat.AverageWeight)</td>
+                            <td class="fw-bold text-success">@stat.MaxWeight</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Custom CSS -->
+<style>
+    .text-gradient {
+        background: linear-gradient(90deg, #007bff, #6610f2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .table-row-hover:hover {
+        background-color: #f8f9fa !important;
+        transform: scale(1.01);
+        transition: all 0.2s ease-in-out;
+    }
+
+    .card {
+        border: 1px solid #e0e0e0;
+    }
+
+    .table thead {
+        letter-spacing: 1px;
+    }
+</style>
