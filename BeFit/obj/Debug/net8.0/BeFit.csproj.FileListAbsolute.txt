@@ -591,3 +591,4 @@ D:\Visual2022(Projekt)\BeFit\BeFit\obj\Debug\net8.0\BeFit.pdb
 D:\Visual2022(Projekt)\BeFit\BeFit\obj\Debug\net8.0\BeFit.genruntimeconfig.cache
 D:\Visual2022(Projekt)\BeFit\BeFit\obj\Debug\net8.0\ref\BeFit.dll
 D:\Visual2022(Projekt)\BeFit\BeFit\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Visual2022(Projekt)\BeFit\BeFit\obj\Debug\net8.0\BeFit.sourcelink.json
